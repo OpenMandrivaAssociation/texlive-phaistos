@@ -1,3 +1,9 @@
+# revision 18651
+# category Package
+# catalog-ctan /fonts/archaic/phaistos
+# catalog-date 2008-07-09 12:34:16 +0200
+# catalog-license lppl
+# catalog-version 1.0
 Name:		texlive-phaistos
 Version:	1.0
 Release:	1
@@ -55,6 +61,7 @@ Greek), but arguments for other languages have been presented.
 #- source
 %doc %{_texmfdistdir}/source/fonts/phaistos/phaistos.dtx
 %doc %{_texmfdistdir}/source/fonts/phaistos/phaistos.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -65,3 +72,5 @@ Greek), but arguments for other languages have been presented.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
