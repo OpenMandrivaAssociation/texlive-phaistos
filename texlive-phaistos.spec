@@ -1,19 +1,13 @@
-# revision 18651
-# category Package
-# catalog-ctan /fonts/archaic/phaistos
-# catalog-date 2008-07-09 12:34:16 +0200
-# catalog-license lppl
-# catalog-version 1.0
 Name:		texlive-phaistos
-Version:	1.0
-Release:	11
+Version:	18651
+Release:	1
 Summary:	Disk of Phaistos font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/archaic/phaistos
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/phaistos.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/phaistos.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/phaistos.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/phaistos.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/phaistos.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/phaistos.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -31,12 +25,12 @@ that the rather later Cretan Linear B script was used to write
 Greek), but arguments for other languages have been presented.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -54,24 +48,11 @@ Greek), but arguments for other languages have been presented.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0-2
-+ Revision: 754876
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
-+ Revision: 719247
-- texlive-phaistos
-- texlive-phaistos
-- texlive-phaistos
-- texlive-phaistos
-
