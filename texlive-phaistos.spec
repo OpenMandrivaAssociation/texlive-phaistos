@@ -1,6 +1,6 @@
 Name:		texlive-phaistos
 Version:	18651
-Release:	1
+Release:	2
 Summary:	Disk of Phaistos font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/archaic/phaistos
