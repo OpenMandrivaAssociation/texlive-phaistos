@@ -3,7 +3,7 @@ Version:	18651
 Release:	2
 Summary:	Disk of Phaistos font
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/archaic/phaistos
+URL:		https://www.ctan.org/tex-archive/fonts/archaic/phaistos
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/phaistos.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/phaistos.doc.r%{version}.tar.xz
